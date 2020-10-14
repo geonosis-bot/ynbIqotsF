@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+
+  <body class="page-{{ page.namespace }}">
+    {% if site.data.manifest.is_undermaintenance %}
+    <!-- Under maintenance  -->
+
+    <div id="maintenance">
+      <div>
+        <h1>Sito in manutenzione, riprova più tardi.</h1>
+        <!-- <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa
+          dolores amet perferendis, consequuntur eveniet voluptatum quam saepe
+          hic neque nostrum numquam reiciendis atque ipsum repellendus
+          praesentium debitis ex quod?
+        </p> -->
+      </div>
+    </div>
+
+    {% else %}
+
+    <!-- No maintenance, show website content -->
+
+    <!-- Header -->
+    {% include header.html %}
+
+    <!-- Content -->
+    <div class="content {{ page.namespace }}">{{ content }}</div>
+
+    <!-- Footer -->
+    {% include footer.html %}
+
+    <!-- Scripts -->
+    {% include scripts.html %}
+
+    <!-- End -->
+    {% endif %}
+  </body>
+</html>
